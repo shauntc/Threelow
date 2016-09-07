@@ -9,48 +9,48 @@
 #import <Foundation/Foundation.h>
 #import "Dice.h"
 #import "InputCollector.h"
+#import "GameController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         InputCollector *inputColletor = [[InputCollector alloc] init];
+        GameController *gameController = [[GameController alloc] init];
         
-        //just some dice to use for now
-        NSMutableSet *setOfDice = [[NSMutableSet alloc] init];
-        for(int i = 0; i < 5; i++)
-        {
-            [setOfDice addObject:[[Dice alloc]init]];
-        }
+        NSString *mainMenu = @"\nMain Menu:\nplay - Play The Game\nquit - Quit Program\nhelp - Show Menu Again";
         
-        NSString *userInput = [[NSString alloc] init];
         bool quit = NO;
+        
+        NSLog(@"%@", mainMenu);
         
         //Main progam loop
         while(!quit)
         {
-            userInput = [inputColletor inputWithHistoryForPrompt:@"temp"];
+            NSString *userInput = [inputColletor inputWithHistoryForPrompt:@""];
             
-            //Quit Commans
+            //Quit Command
             if([userInput isEqualToString:@"quit"])
             {
-                NSLog(@"quitting.....");
+                NSLog(@"\nquitting.....");
                 quit = YES;
             }
             
-            //Roll command
-            else if([userInput isEqualToString:@"roll"])
+            //Play Command
+            else if([userInput isEqualToString:@"play"])
             {
-                for(Dice *selectedDice in setOfDice)
-                {
-                    [selectedDice roll];
-                }
+                [gameController Play];
             }
             
+            //Help/Menu Command - Display menu again
+            else if ([userInput isEqualToString:@"help"] || [userInput isEqualToString:@"menu"])
+            {
+                NSLog(@"%@", mainMenu);
+            }
             
             //Input is not a command
             else
             {
-                NSLog(@"Invalid input");
+                NSLog(@"\nInvalid input%@", mainMenu);
             }
         
         

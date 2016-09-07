@@ -10,6 +10,8 @@
 		28466FAC1D8085150036FEA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28466FAB1D8085150036FEA9 /* main.m */; };
 		28466FB41D80865C0036FEA9 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 28466FB31D80865C0036FEA9 /* Dice.m */; };
 		28466FB71D8094E50036FEA9 /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 28466FB61D8094E50036FEA9 /* InputCollector.m */; };
+		28466FBD1D809A9E0036FEA9 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28466FBC1D809A9E0036FEA9 /* GameController.m */; };
+		28466FC01D80A2FB0036FEA9 /* DiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28466FBF1D80A2FB0036FEA9 /* DiceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		28466FB31D80865C0036FEA9 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
 		28466FB51D8094E50036FEA9 /* InputCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputCollector.h; sourceTree = "<group>"; };
 		28466FB61D8094E50036FEA9 /* InputCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputCollector.m; sourceTree = "<group>"; };
+		28466FBB1D809A9E0036FEA9 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		28466FBC1D809A9E0036FEA9 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		28466FBE1D80A2FB0036FEA9 /* DiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceManager.h; sourceTree = "<group>"; };
+		28466FBF1D80A2FB0036FEA9 /* DiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				28466FAB1D8085150036FEA9 /* main.m */,
+				28466FBB1D809A9E0036FEA9 /* GameController.h */,
+				28466FBC1D809A9E0036FEA9 /* GameController.m */,
+				28466FBE1D80A2FB0036FEA9 /* DiceManager.h */,
+				28466FBF1D80A2FB0036FEA9 /* DiceManager.m */,
 				28466FB21D80865C0036FEA9 /* Dice.h */,
 				28466FB31D80865C0036FEA9 /* Dice.m */,
 				28466FB51D8094E50036FEA9 /* InputCollector.h */,
@@ -129,8 +139,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28466FB71D8094E50036FEA9 /* InputCollector.m in Sources */,
+				28466FBD1D809A9E0036FEA9 /* GameController.m in Sources */,
 				28466FB41D80865C0036FEA9 /* Dice.m in Sources */,
 				28466FAC1D8085150036FEA9 /* main.m in Sources */,
+				28466FC01D80A2FB0036FEA9 /* DiceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,10 @@
 
 @implementation Dice
 
--(void)roll
+-(NSNumber *)roll
 {
     self.value = [NSNumber numberWithInt:(arc4random_uniform(6)+1)];
-    NSLog(@"Rolled a %@", self.value);
+    return self.value;
 }
 
 -(NSNumber *) returnValue

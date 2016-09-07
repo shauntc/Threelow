@@ -1,5 +1,5 @@
 //
-//  Dice.h
+//  GameController.h
 //  Threelow
 //
 //  Created by Shaun Campbell on 2016-09-07.
@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputCollector.h"
+#import "Dice.h"
+#import "DiceManager.h"
 
-@interface Dice : NSObject
+
+@interface GameController : NSObject
 
 
-
-
--(NSNumber *) returnValue;
--(NSNumber *)roll;
-
+-(void)Play;
 
 @end
