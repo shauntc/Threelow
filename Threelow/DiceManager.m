@@ -45,9 +45,13 @@
 -(NSNumber *)currentScore
 {
     int score = 0;
-    for(NSNumber *diceScore in self.allDice)
+    for(Dice *dice in self.allDice)
     {
-        score += [diceScore intValue];
+        int i = [[dice returnValue] intValue];
+        if(i != 3)
+        {
+            score += i;
+        }
     }
     
     return [NSNumber numberWithInt:score];

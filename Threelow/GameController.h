@@ -15,6 +15,6 @@
 @interface GameController : NSObject
 
 
--(void)Play;
+-(bool)Play;
 
 @end

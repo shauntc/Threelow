@@ -38,7 +38,11 @@ int main(int argc, const char * argv[]) {
             //Play Command
             else if([userInput isEqualToString:@"play"])
             {
-                [gameController Play];
+                quit = [gameController Play];
+                if(!quit)
+                {
+                    NSLog(@"%@", mainMenu); 
+                }
             }
             
             //Help/Menu Command - Display menu again

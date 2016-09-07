@@ -11,7 +11,7 @@
 @implementation GameController
 
 
--(void)Play
+-(bool)Play
 {
     InputCollector *playInputCollector = [[InputCollector alloc] init];
     DiceManager *diceManager = [[DiceManager alloc] init];
@@ -19,26 +19,34 @@
     
     bool play = YES;
     bool hasRolled = NO;
-    NSString *playOptions = @"end - roll - reset - ";
+    NSString *playOptions = @"\nend - roll - reset - ";
+    NSString *userInput = [[NSString alloc] init];
 
     
     while(play)
     {
         
-        //Show Score if
+        //Prompt User for input, show score if user has rolled at least once
         if(hasRolled)
         {
-            NSLog(@"Score: %@     Number of Rolls: %@", [diceManager currentScore], @1);
+            userInput = [playInputCollector inputWithHistoryForPrompt:[NSString stringWithFormat:@"\nScore:%@  Rolls:%@%@",[diceManager currentScore],@5, playOptions]];
         }
         else
         {
-            NSString *userInput = [playInputCollector inputWithHistoryForPrompt:playOptions];
+            userInput = [playInputCollector inputWithHistoryForPrompt:playOptions];
         }
         
-        if([userInput isEqualToString:@"end"] || [userInput isEqualToString:@"quit"])
+        if([userInput isEqualToString:@"end"])
         {
             NSLog(@"\nThanks for playing");
+            return NO;
             play = NO;
+        }
+        else if([userInput isEqualToString:@"quit"])
+        {
+            NSLog(@"\nThanks for playing");
+            NSLog(@"\nquitting.....");
+            return YES;
         }
         
         //Roll command
@@ -60,6 +68,7 @@
             if((i!=0 || [[userInput stringByReplacingOccurrencesOfString:@"hold " withString:@""]  isEqual: @"0"]) && i < diceManager.allDice.count)
             {
                 [diceManager holdDice:diceManager.allDice[i]];
+                NSLog(@"\nDice %d is held", i);
             }
             else
             {
@@ -70,7 +79,8 @@
         //Reset game command
         else if ([userInput isEqualToString:@"restart"] || [userInput isEqualToString:@"reset"])
         {
-            //reset the game
+            [diceManager.heldDice removeAllObjects];
+            hasRolled = NO;
         }
         
         //Unrecognized command
@@ -85,7 +95,7 @@
         
     }
     
-    
+    return NO;
     
     
 }
