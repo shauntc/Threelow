@@ -34,6 +34,10 @@
         {
             NSLog(@"Dice %d rolled %@",(i), [self.allDice[i] roll]);
         }
+        else
+        {
+            NSLog(@"Dice %d held at %@", i, [self.allDice[i] returnValue]);
+        }
     }
 }
 
@@ -41,6 +45,13 @@
 {
     [self.heldDice addObject:diceToHold];
 }
+
+-(void)releaseDice:(Dice *)diceToRelease
+{
+    [self.heldDice removeObject:diceToRelease];
+}
+
+
 
 -(NSNumber *)currentScore
 {

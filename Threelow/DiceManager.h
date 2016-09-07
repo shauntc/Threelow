@@ -16,6 +16,8 @@
 
 -(void)rollUnheldDice;
 -(void)holdDice:(Dice *)diceToHold;
+-(void)releaseDice:(Dice *)diceToRelease;
+
 -(NSNumber *)currentScore;
 
 
